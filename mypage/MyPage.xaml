@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage x:Class="BoxStation.mypage.MyPage"
+    xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BoxStation.mypage" 
+    WidthSpecification="{Static LayoutParamPolicies.MatchParent}" 
+    HeightSpecification="{Static LayoutParamPolicies.MatchParent}" >
+
+    <ContentPage.AppBar >
+        <AppBar Title="MyPage"/>
+    </ContentPage.AppBar>
+
+    <ContentPage.Content>
+        <View BackgroundColor="Green"
+              WidthSpecification="{Static LayoutParamPolicies.MatchParent}" 
+              HeightSpecification="{Static LayoutParamPolicies.MatchParent}">
+        </View>
+    </ContentPage.Content>
+</ContentPage>
