@@ -5,8 +5,12 @@
     xmlns:local="clr-namespace:BoxStation.bus" 
     WidthSpecification="{Static LayoutParamPolicies.MatchParent}" 
     HeightSpecification="{Static LayoutParamPolicies.MatchParent}" >
+    <ContentPage.AppBar >
+        <AppBar Title="Bus"/>
+    </ContentPage.AppBar>
 
     <ContentPage.Content>
+        
         <View WidthSpecification="{Static LayoutParamPolicies.MatchParent}" 
               HeightSpecification="{Static LayoutParamPolicies.MatchParent}">
 
@@ -14,8 +18,22 @@
                WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
                HeightSpecification="{Static LayoutParamPolicies.MatchParent}"
                x:Name="contentView">
-                
-                
+                <View.Layout>
+                    <LinearLayout LinearOrientation="Vertical"
+                                      LinearAlignment="Begin"/>
+                </View.Layout>
+
+                <ImageView ResourceUrl="*Resource*/images/realBusStation.PNG"
+                           WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
+                           HeightSpecification="{Static LayoutParamPolicies.MatchParent}"
+                           CellHorizontalAlignment="Center"
+                           Margin="100,100,100,100"
+                           Weight="0.8"/>
+                <View WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
+                      HeightSpecification="{Static LayoutParamPolicies.MatchParent}"
+                      BackgroundColor="Black"
+                      Weight="0.2" />
+
             </ImageView>
         </View>
     </ContentPage.Content>

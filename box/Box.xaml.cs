@@ -11,6 +11,14 @@ namespace BoxStation.box
             InitializeComponent();
         }
 
-        
+        private void Button_Clicked_Add(object sender, ClickedEventArgs e)
+        {
+
+        }
+
+        private void Button_Clicked_Remove(object sender, ClickedEventArgs e)
+        {
+
+        }
     }
 }

@@ -1,8 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<View x:Class="BoxStation.box.RemoveBoxPage"
+<ContentPage x:Class="BoxStation.box.RemoveBoxPage"
     xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BoxStation.box" >
+    <ContentPage.AppBar >
+        <AppBar Title="물품 꺼내기"/>
+    </ContentPage.AppBar>
 
     <View Size="200,200" BackgroundColor="Blue" />
-</View>
+</ContentPage>
