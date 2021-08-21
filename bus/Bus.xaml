@@ -14,59 +14,6 @@
                WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
                HeightSpecification="{Static LayoutParamPolicies.MatchParent}"
                x:Name="contentView">
-                <View.Layout>
-                    <LinearLayout LinearOrientation="Vertical"
-                                      LinearAlignment="Begin"/>
-                </View.Layout>
-                
-                <View WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
-                      Weight="0.9"
-                      >
-                    
-                </View>
-
-                <View 
-                    BackgroundColor="White"
-                    WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
-                    HeightSpecification="{Static LayoutParamPolicies.MatchParent}"
-                    
-                    ParentOrigin="BottomLeft"
-                    PivotPoint="BottomLeft"
-                    PositionUsesPivotPoint="True"
-                    Weight="0.1">
-
-                    <View.Layout>
-                        <FlexLayout Direction="Row"
-                                    Alignment="Center"
-                                    Justification="SpaceAround"/>
-                    </View.Layout>
-                    
-                    <Button 
-                        Clicked="Button_Clicked"
-                        ParentOrigin="BottomLeft"
-                        PivotPoint="BottomLeft"
-                        PositionUsesPivotPoint="True">
-                        <ImageView ResourceUrl="*Resource*/images/box.PNG"/>
-                    </Button>
-
-                    <Button 
-                        Clicked="Button_Clicked"
-                        ParentOrigin="BottomLeft"
-                        PivotPoint="BottomLeft"
-                        PositionUsesPivotPoint="True">
-                        <ImageView ResourceUrl="*Resource*/images/bus.PNG"/>
-                    </Button>
-
-
-                    <Button 
-                        Clicked="Button_Clicked"
-                        ParentOrigin="BottomLeft"
-                        PivotPoint="BottomLeft"
-                        PositionUsesPivotPoint="True">
-                        <ImageView ResourceUrl="*Resource*/images/mypage.png"/>
-                    </Button>
-                </View>
-
                 
                 
             </ImageView>

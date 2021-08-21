@@ -3,9 +3,9 @@ using Tizen.NUI.BaseComponents;
 
 namespace BoxStation.box
 {
-    public partial class PushPage : View
+    public partial class RemoveBoxPage : View
     {
-        public PushPage()
+        public RemoveBoxPage()
         {
             InitializeComponent();
         }

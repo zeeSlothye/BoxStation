@@ -3,9 +3,9 @@ using Tizen.NUI.BaseComponents;
 
 namespace BoxStation.box
 {
-    public partial class PutPage : View
+    public partial class AddBoxPage : View
     {
-        public PutPage()
+        public AddBoxPage()
         {
             InitializeComponent();
         }

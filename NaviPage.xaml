@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage x:Class="BoxStation.NaviPage"
+    xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BoxStation" >
+    WidthSpecification="{Static LayoutParamPolicies.MatchParent}" 
+    HeightSpecification="{Static LayoutParamPolicies.MatchParent}" >
+
+    <ContentPage.Content>
+        <View WidthSpecification="{Static LayoutParamPolicies.MatchParent}" 
+              HeightSpecification="{Static LayoutParamPolicies.MatchParent}">
+
+            <ImageView ResourceUrl="*Resource*/images/hello.jpg"
+               WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
+               HeightSpecification="{Static LayoutParamPolicies.MatchParent}"
+               x:Name="contentView">
+                <View.Layout>
+                    <LinearLayout LinearOrientation="Vertical"
+                                      LinearAlignment="Begin"/>
+                </View.Layout>
+
+                <View WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
+                      Weight="0.9"
+                      >
+
+                </View>
+
+                <View 
+                    BackgroundColor="White"
+                    WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
+                    HeightSpecification="{Static LayoutParamPolicies.MatchParent}"
+                    
+                    ParentOrigin="BottomLeft"
+                    PivotPoint="BottomLeft"
+                    PositionUsesPivotPoint="True"
+                    Weight="0.1">
+
+                    <View.Layout>
+                        <FlexLayout Direction="Row"
+                                    Alignment="Center"
+                                    Justification="SpaceAround"/>
+                    </View.Layout>
+
+                    <Button 
+                        Clicked="Button_Clicked_Box"
+                        ParentOrigin="BottomLeft"
+                        PivotPoint="BottomLeft"
+                        PositionUsesPivotPoint="True">
+                        <ImageView ResourceUrl="*Resource*/images/box.PNG"/>
+                    </Button>
+
+                    <Button 
+                        Clicked="Button_Clicked_Bus"
+                        ParentOrigin="BottomLeft"
+                        PivotPoint="BottomLeft"
+                        PositionUsesPivotPoint="True">
+                        <ImageView ResourceUrl="*Resource*/images/bus.PNG"/>
+                    </Button>
+
+
+                    <Button 
+                        Clicked="Button_Clicked_Mypage"
+                        ParentOrigin="BottomLeft"
+                        PivotPoint="BottomLeft"
+                        PositionUsesPivotPoint="True">
+                        <ImageView ResourceUrl="*Resource*/images/mypage.png"/>
+                    </Button>
+                </View>
+
+
+
+            </ImageView>
+        </View>
+    </ContentPage.Content>
+</ContentPage>

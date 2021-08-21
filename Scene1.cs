@@ -20,7 +20,7 @@ namespace BoxStation
             // NOTE To use theme.xaml, uncomment below line.
             ThemeManager.ApplyTheme(new Theme(Tizen.Applications.Application.Current.DirectoryInfo.Resource + "theme/theme.xaml"));
 
-            GetDefaultWindow().GetDefaultNavigator().Push(new bus.Bus());
+            GetDefaultWindow().GetDefaultNavigator().Push(new NaviPage());
             GetDefaultWindow().KeyEvent += OnScene1KeyEvent;
         }
 
