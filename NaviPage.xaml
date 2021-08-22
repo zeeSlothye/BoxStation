@@ -19,7 +19,6 @@
                                   LinearAlignment="Begin"/>
                 </View.Layout>
                 
-                
                 <View x:Name="Button_Mypage"
                     WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
                       HeightSpecification="{Static LayoutParamPolicies.MatchParent}"

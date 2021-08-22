@@ -24,7 +24,7 @@ namespace BoxStation
             //GetDefaultWindow().AddAvailableOrientation(Window.WindowOrientation.Portrait);
             //GetDefaultWindow().SetPreferredOrientation(Window.WindowOrientation.Portrait);
 
-            GetDefaultWindow().GetDefaultNavigator().Push(new NaviPage());
+            GetDefaultWindow().GetDefaultNavigator().Push(new box.Box());
             GetDefaultWindow().KeyEvent += OnScene1KeyEvent;
         }
 

@@ -7,5 +7,35 @@
         <AppBar Title="물품보관"/>
     </ContentPage.AppBar>
 
-    <View Size="200,200" BackgroundColor="Blue" />
+    <ContentPage.Content>
+        <View WidthSpecification="{Static LayoutParamPolicies.MatchParent}" 
+              HeightSpecification="{Static LayoutParamPolicies.MatchParent}">
+
+            <ImageView ResourceUrl="*Resource*/images/hello.jpg"
+               WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
+               HeightSpecification="{Static LayoutParamPolicies.MatchParent}"
+               x:Name="contentView">
+                <View.Layout>
+                    <LinearLayout LinearOrientation="Vertical"
+                                  LinearAlignment="Begin"/>
+                </View.Layout>
+
+                <View x:Name="stationInfo"
+                    WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
+                     HeightSpecification="{Static LayoutParamPolicies.MatchParent}"
+                      CellHorizontalAlignment="Center"
+                     Weight="0.3">
+                </View>
+
+                <View x:Name="boxInfo"
+                      WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
+                      HeightSpecification="{Static LayoutParamPolicies.MatchParent}"
+                      BackgroundColor="White"
+                      Weight="0.6">
+                </View>
+
+            </ImageView>
+        </View>
+    </ContentPage.Content>
+
 </ContentPage>

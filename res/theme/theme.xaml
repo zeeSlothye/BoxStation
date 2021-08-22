@@ -5,5 +5,16 @@
   Id="sampleTheme" >
 
   <!-- Put styles with x:Key here -->
+    <c:ButtonStyle x:Key="BoxButton">
+        <c:ButtonStyle.BackgroundImage>
+            <Selector x:TypeArguments="x:String"
+                  Normal="*Resource*/images/gallery_item_normal.png"
+                      Pressed="*Resource*/images/gallery_item_pressed.png"
+                      SelectedFocused="*Resource*/images/gallery_item_pressed.png">
+                
+            </Selector>
+        </c:ButtonStyle.BackgroundImage>
+    </c:ButtonStyle>
+    
 
 </Theme>
