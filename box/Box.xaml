@@ -27,6 +27,14 @@
                                     Alignment="Center"
                                     ItemsAlignment="Center"/>
                 </View.Layout>
+                
+                <Button Text="수거"
+                    BackgroundColor="White"
+                    PointSize="100"
+                    TextColor="Red"
+                        Clicked="Button_Clicked_Remove"
+                        Size="400,400">
+                </Button>
 
                 <Button Text="보관"
                         BackgroundColor="White"
@@ -36,13 +44,7 @@
                         Size="400,400">
                     </Button>
 
-                <Button Text="수거"
-                    BackgroundColor="White"
-                    PointSize="100"
-                    TextColor="Red"
-                        Clicked="Button_Clicked_Remove"
-                        Size="400,400">
-                </Button>
+                
 
             </ImageView>
         </View>

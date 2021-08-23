@@ -4,8 +4,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BoxStation.box" >
     <ContentPage.AppBar >
-        <AppBar Title="물품 꺼내기"/>
+        <AppBar Title="보관 목록"/>
+        <View>
+            
+        </View>
     </ContentPage.AppBar>
 
-    <View Size="200,200" BackgroundColor="Blue" />
 </ContentPage>

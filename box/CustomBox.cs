@@ -31,6 +31,7 @@ namespace BoxStation.box
             btn.Icon.WidthSpecification = (int)(sizeW * 0.7f);
             btn.Icon.HeightSpecification = (int)(sizeW * 0.7f);
             btn.Icon.SetBinding(ImageView.ResourceUrlProperty, "IsOpen");
+            btn.Clicked += Btn_Clicked;
             Add(btn);
             label = new TextLabel()
             {
@@ -45,5 +46,10 @@ namespace BoxStation.box
 
         }
 
+        private void Btn_Clicked(object sender, ClickedEventArgs e)
+        {
+            ClickBox clickbox = new ClickBox();
+            clickbox.ShowClickBoxPage();
+        }
     }
 }
