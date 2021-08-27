@@ -30,7 +30,7 @@ namespace BoxStation.Data
         {
             get
             {
-                return userPhone;
+                return "Phone Number: "+userPhone;
                 ;
             }
             set
@@ -45,7 +45,7 @@ namespace BoxStation.Data
         {
             get
             {
-                return userPW;
+                return "PassWord: "+userPW;
                 ;
             }
             set

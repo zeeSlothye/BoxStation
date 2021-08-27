@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Tizen.NUI;
 using Tizen.NUI.BaseComponents;
@@ -60,8 +63,8 @@ namespace BoxStation.box
             boxInfo.Add(boxContainerView);
 
             //박스번호를 통해 박스 구분하도록 dict만듦. 
-            Data.BoxDataSource box = new Data.BoxDataSource();
-            box.BoxDict(boxesDataSource);
+            //Data.BoxDataSource box = new Data.BoxDataSource();
+            //box.BoxDict(boxesDataSource);
         }
         
 
@@ -69,23 +72,39 @@ namespace BoxStation.box
 
 
 
-        private async Task<HttpResponseMessage> get_user()
+        private async void Get_occupiedLockerS(string uri, Dictionary<string, string> parameters)
         {
+            //Json => model
             //https://stackoverflow.com/questions/2246694/how-to-convert-json-object-to-custom-c-sharp-object
-            //서버로 보낼 데이터
-            var parameters = new Dictionary<string, string>();
-            parameters.Add("userId", "abc");
-            parameters.Add("userPw", "abc");
-            //type : Dict => HttpContent 
-            var encodedContent = new FormUrlEncodedContent(parameters);
-            //서버로 데이터를 보내고 받는.. => response로 return
-            HttpResponseMessage response = await new HttpClient().PostAsync("http://3.37.186.43:8000/user/get_user", encodedContent);
 
-            Console.WriteLine(response);
-            string json = await response.Content.ReadAsStringAsync(); ;
-            return response;
+
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+            request.Method = "POST";
+            request.ContentType = "application/json";
+            request.Timeout = 30 * 1000;
+            //request.Headers.Add("Authorization", "BASIC SGVsbG8=");
+
+            // POST할 데이타를 Request Stream에 쓴다
+            byte[] bytes = JsonSerializer.SerializeToUtf8Bytes(parameters);
+            request.ContentLength = bytes.Length; // 바이트수 지정
+
+            using (Stream reqStream = request.GetRequestStream())
+            {
+                reqStream.Write(bytes, 0, bytes.Length);
+            }
+
+            // Response 처리
+            string responseText = string.Empty;
+            using (WebResponse resp = request.GetResponse())
+            {
+                Stream respStream = resp.GetResponseStream();
+                using (StreamReader sr = new StreamReader(respStream))
+                {
+                    responseText = sr.ReadToEnd();
+                }
+            }
         }
 
-        
+
     }
 }

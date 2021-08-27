@@ -29,7 +29,7 @@ namespace BoxStation.box
 
         
 
-    public void ShowPopup()
+        public void ShowPopup()
         {
             NUIApplication.GetDefaultWindow().GetDefaultNavigator().Push(this);
         }

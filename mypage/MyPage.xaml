@@ -18,9 +18,11 @@
                 <LinearLayout LinearAlignment="Center"
                               LinearOrientation="Vertical"/>
             </View.Layout>
-            <TextLabel Text="Phone Number: "
+            <TextLabel x:Name="userPN"
+                Text="Phone Number: "
                            PixelSize="100"/>
-            <TextLabel Text="Password:  "
+            <TextLabel x:Name="userPW"
+                Text="Password:  "
                            PixelSize="100"/>
         </View>
         

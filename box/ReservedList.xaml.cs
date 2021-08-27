@@ -11,6 +11,7 @@ namespace BoxStation
         public ReservedList()
         {
             InitializeComponent();
+
             List<Data.Boxes> dataSource = new List<Data.Boxes>();
             foreach (var item in Data.Resources.Boxes)
             {
@@ -21,6 +22,7 @@ namespace BoxStation
             {
                 WidthSpecification = LayoutParamPolicies.MatchParent,
                 HeightSpecification = LayoutParamPolicies.MatchParent,
+                Padding= new Extents(10, 100, 100, 10),
                 ItemsSource = dataSource,
                 ItemsLayouter = new LinearLayouter(),
                 ItemTemplate = new DataTemplate(() =>

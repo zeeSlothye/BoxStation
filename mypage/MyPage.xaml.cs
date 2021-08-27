@@ -9,6 +9,8 @@ namespace BoxStation.mypage
         public MyPage()
         {
             InitializeComponent();
+            userPN.Text = Data.Resources.user.UserPhone;
         }
+        
     }
 }

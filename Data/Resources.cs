@@ -5,10 +5,11 @@ using Newtonsoft.Json.Linq;
 
 namespace BoxStation.Data
 {
-    public static class Resources
+    public class Resources
     {
-
-        public static Users user = new Users("01012345678", "12345678", "0000", "True");
+        public Users user = new Users("01012345678", "12345678", "0000", "True");
+        
+        
         /*
         public static (string userPh, string userPw, string condBc, string autoPayment)[] Users =
         {

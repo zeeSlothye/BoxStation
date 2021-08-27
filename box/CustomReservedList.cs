@@ -16,8 +16,6 @@ namespace BoxStation.box
         private TextLabel stationLabel;
         private TextLabel boxNumberLabel;
         private TextLabel pWLabel;
-        private TextLabel reservedDateLabel;
-        private TextLabel reservedStuffLabel;
         private TextLabel presentCostLabel;
         public CustomReservedList()
         {
@@ -34,20 +32,25 @@ namespace BoxStation.box
                 ParentOrigin = Tizen.NUI.ParentOrigin.Center,
                 PivotPoint = Tizen.NUI.PivotPoint.Center,
                 PositionUsesPivotPoint = true,
+                BackgroundColor = new Tizen.NUI.Color("#7474ff"),
             };
+            
             btn.Clicked += Btn_Clicked;
             Add(btn);
 
+            //StationName
             stationLabel = new TextLabel()
             {
                 PointSize = 100,
-                ParentOrigin = Tizen.NUI.ParentOrigin.TopLeft,
-                PivotPoint = Tizen.NUI.PivotPoint.TopLeft,
+                ParentOrigin = Tizen.NUI.ParentOrigin.CenterLeft,
+                PivotPoint = Tizen.NUI.PivotPoint.CenterLeft,
                 PositionUsesPivotPoint = true,
             };
             Add(stationLabel);
-            stationLabel.SetBinding(TextLabel.TextProperty, "StationName");
+            //stationLabel.SetBinding(TextLabel.TextProperty, "StationName");
+            stationLabel.Text = "충남대학교 정류장";
 
+            //BoxNumber
             boxNumberLabel = new TextLabel()
             {
                 PointSize = 100,
@@ -69,45 +72,26 @@ namespace BoxStation.box
             //pWLabel.SetBinding(TextLabel.TextProperty, "PW");
             pWLabel.Text = "1234";
 
-            reservedStuffLabel = new TextLabel()
+
+            //Cost
+            presentCostLabel = new TextLabel()
             {
                 PointSize = 100,
-                ParentOrigin = Tizen.NUI.ParentOrigin.TopCenter,
-                PivotPoint = Tizen.NUI.PivotPoint.TopCenter,
-                PositionUsesPivotPoint = true,
-            };
-            Add(reservedStuffLabel);
-            //reservedStuffLabel.SetBinding(TextLabel.TextProperty, "ReservedDate");
-            reservedStuffLabel.Text = "노트북";
-
-            /*reservedDateLabel = new TextLabel()
-             {
-                PointSize = 30,
-                ParentOrigin = Tizen.NUI.ParentOrigin.TopRight,
-                PivotPoint = Tizen.NUI.PivotPoint.TopRight,
-                PositionUsesPivotPoint = true,
-            };
-            Add(reservedDateLabel);
-            //reservedDateLabel.SetBinding(TextLabel.TextProperty, "ReservedDate");
-            reservedDateLabel.Text = "2021.08.25 PM 7:11";*/
-            
-            /*presentCostLabel = new TextLabel()
-            {
-                PointSize = 30,
-                ParentOrigin = Tizen.NUI.ParentOrigin.BottomRight,
-                PivotPoint = Tizen.NUI.PivotPoint.BottomRight,
+                ParentOrigin = Tizen.NUI.ParentOrigin.CenterRight,
+                PivotPoint = Tizen.NUI.PivotPoint.CenterRight,
                 PositionUsesPivotPoint = true,
             };
             Add(presentCostLabel);
-            //presentCostLabel.SetBinding(TextLabel.TextProperty, "PresentCost");
-            presentCostLabel.Text = "29,480";*/
+            //reservedStuffLabel.SetBinding(TextLabel.TextProperty, "ReservedDate");
+            presentCostLabel.Text = "2134123";
+
         }
 
         private void Btn_Clicked(object sender, ClickedEventArgs e)
         {
-            //ClickBox clickbox = new ClickBox();
-            //clickbox.BindingContext = this.BindingContext;
-            //clickbox.ShowClickBoxPage(parameters);
+            ReservedListPopup reservedListPopup = new ReservedListPopup();
+            reservedListPopup.BindingContext = this.BindingContext;
+            reservedListPopup.ShowPopUpPage();
         }
     }
 }

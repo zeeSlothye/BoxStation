@@ -10,5 +10,22 @@ namespace BoxStation.box
         {
             InitializeComponent();
         }
+
+        public void ShowPopUpPage()
+        {
+            NUIApplication.GetDefaultWindow().GetDefaultNavigator().Push(this);
+        }
+
+        private bool goHome_TouchEvent(object source, TouchEventArgs e)
+        {
+            Navigator.Push(new NaviPage());
+            return true;
+        }
+
+        private bool reservedListPopup_TouchEvent(object source, TouchEventArgs e)
+        {
+            NUIApplication.GetDefaultWindow().GetDefaultNavigator().Pop();
+            return true;
+        }
     }
 }

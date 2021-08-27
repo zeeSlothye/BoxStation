@@ -24,10 +24,6 @@ namespace BoxStation.box
         {
             //box = Data.BoxDataSource.boxDataSource[lockerIdx];
             this.parameters = parameters;
-            parameters.Add("title", stuff.Text);
-            parameters.Add("info", info.Text);
-            parameters.Add("password", enterPW.Text);
-            parameters.Add("trusterId", Data.Resources.user.userPh);
             NUIApplication.GetDefaultWindow().GetDefaultNavigator().Push(this);
         }
         
@@ -38,6 +34,10 @@ namespace BoxStation.box
 
         private void startUse_Clicked(object sender, ClickedEventArgs e)
         {
+            parameters.Add("title", stuff.Text);
+            parameters.Add("info", info.Text);
+            parameters.Add("password", enterPW.Text);
+            parameters.Add("trusterId", Data.Resources.user.UserPhone);
             Reserve reserve = new Reserve();
             reserve.ShowPopup(parameters);
 

@@ -57,12 +57,19 @@ namespace BoxStation.Data
             }
         }
 
-        private string isOpen;
-        public string IsOpen
+        private bool isOpen;
+        public bool IsOpen
         {
             get
             {
-                return Application.Current.DirectoryInfo.Resource+"/images/isOpen/"+isOpen;
+                if (isOpen)
+                {
+                    return Application.Current.DirectoryInfo.Resource + "/images/isOpen/isOpen_true";
+                }
+                else
+                {
+                    return Application.Current.DirectoryInfo.Resource + "/images/isOpen/isOpen_false";
+                }
             }
             set
             {
