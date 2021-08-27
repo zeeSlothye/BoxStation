@@ -34,7 +34,17 @@
                        PixelSize="50"
                        WidthSpecification="{Static LayoutParamPolicies.MatchParent}"/>
                     <TextEditor x:Name="stuff"
+                       PlaceholderText="보관하실 물건의 제목를 입력하세요."
+                       TextChanged="stuff_TextChanged"
+                       PixelSize="100"
+                       WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
+                        HeightSpecification="200"/>
+                    <TextLabel Text="물품정보"
+                       PixelSize="50"
+                       WidthSpecification="{Static LayoutParamPolicies.MatchParent}"/>
+                    <TextEditor x:Name="info"
                        PlaceholderText="보관하실 물건의 정보를 입력하세요."
+                       TextChanged="stuff_TextChanged"
                        PixelSize="100"
                        WidthSpecification="{Static LayoutParamPolicies.MatchParent}"
                         HeightSpecification="200"/>
@@ -43,6 +53,7 @@
                        WidthSpecification="{Static LayoutParamPolicies.MatchParent}"/>
                     <TextField x:Name="enterPW"
                                TouchEvent="enterPW_TouchEvent"
+                               TextChanged="enterPW_TextChanged"
                        PlaceholderText="네 자리 숫자를 입력하세요."
                        MaxLength="4"
                        MaxLengthReached="enterPW_MaxLengthReached"

@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using Tizen.NUI;
 using Tizen.NUI.BaseComponents;
 using Tizen.NUI.Components;
@@ -7,17 +8,29 @@ namespace BoxStation.box
 {
     public partial class ClickBox : ContentPage
     {
+
         //user가 입력한 비밀번호, 보관한 물건 정보를 입력받아 저장. 
         public ClickBox()
         {
+   
             InitializeComponent();
 
         }
-        
-        public void ShowClickBoxPage()
+
+        Data.Boxes box;
+        //Dictionary<string, string> boxForJson = new Dictionary<string, string>();
+        Dictionary<string, string> parameters = new Dictionary<string, string>();
+        public void ShowClickBoxPage(Dictionary<string, string> parameters)
         {
+            //box = Data.BoxDataSource.boxDataSource[lockerIdx];
+            this.parameters = parameters;
+            parameters.Add("title", stuff.Text);
+            parameters.Add("info", info.Text);
+            parameters.Add("password", enterPW.Text);
+            parameters.Add("trusterId", Data.Resources.user.userPh);
             NUIApplication.GetDefaultWindow().GetDefaultNavigator().Push(this);
         }
+        
         private void back_Clicked(object sender, ClickedEventArgs e)
         {
             NUIApplication.GetDefaultWindow().GetDefaultNavigator().Pop();
@@ -25,9 +38,8 @@ namespace BoxStation.box
 
         private void startUse_Clicked(object sender, ClickedEventArgs e)
         {
-            //Reserve.Instance.ShowPopup();
             Reserve reserve = new Reserve();
-            reserve.ShowPopup();
+            reserve.ShowPopup(parameters);
 
         }
 
@@ -61,6 +73,13 @@ namespace BoxStation.box
             };
         }
 
-        
+        private void stuff_TextChanged(object sender, TextEditor.TextChangedEventArgs e)
+        {
+            //update
+        }
+
+        private void enterPW_TextChanged(object sender, TextField.TextChangedEventArgs e)
+        {
+        }
     }
 }

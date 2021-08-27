@@ -1,19 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 
 
-namespace BoxStation
+namespace BoxStation.Data
 {
     public static class Resources
     {
-        //Users
-        public static (string userPh, string userPw, string condBc)[] Users =
+
+        public static Users user = new Users("01012345678", "12345678", "0000", "True");
+        /*
+        public static (string userPh, string userPw, string condBc, string autoPayment)[] Users =
         {
-            ("01012345678","12345678","0000"),
-            ("01028375982","asdkjflkas","0001"),
-            ("01081397598","29ur0re9ewt","0002"),
-            ("01018232942","dg234gewe","0003"),
+            ("01012345678","12345678","0000","True"),
+            ("01028375982","asdkjflkas","0001","True"),
+            ("01081397598","29ur0re9ewt","0002","True"),
+            ("01018232942","dg234gewe","0003","True"),
         };
+        */
 
         
         //Stations
@@ -48,7 +52,10 @@ namespace BoxStation
     }
     public class User
     {
-        
+        private string v1;
+        private string v2;
+        private string v3;
+
         public User(string json)
         {
             JObject data = JObject.Parse(json);

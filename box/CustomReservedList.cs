@@ -28,7 +28,7 @@ namespace BoxStation.box
             //버튼(틀), 클릭시 detail info
             btn = new Button()
             {
-                StyleName = "BoxButton",
+                StyleName = "ReservedListButton",
                 WidthSpecification = LayoutParamPolicies.MatchParent,
                 HeightSpecification = LayoutParamPolicies.MatchParent,
                 ParentOrigin = Tizen.NUI.ParentOrigin.Center,
@@ -40,7 +40,7 @@ namespace BoxStation.box
 
             stationLabel = new TextLabel()
             {
-                PointSize = 30,
+                PointSize = 100,
                 ParentOrigin = Tizen.NUI.ParentOrigin.TopLeft,
                 PivotPoint = Tizen.NUI.PivotPoint.TopLeft,
                 PositionUsesPivotPoint = true,
@@ -50,9 +50,9 @@ namespace BoxStation.box
 
             boxNumberLabel = new TextLabel()
             {
-                PointSize = 30,
-                ParentOrigin = Tizen.NUI.ParentOrigin.BottomLeft,
-                PivotPoint = Tizen.NUI.PivotPoint.BottomLeft,
+                PointSize = 100,
+                ParentOrigin = Tizen.NUI.ParentOrigin.Center,
+                PivotPoint = Tizen.NUI.PivotPoint.Center,
                 PositionUsesPivotPoint = true,
             };
             Add(boxNumberLabel);
@@ -71,7 +71,7 @@ namespace BoxStation.box
 
             reservedStuffLabel = new TextLabel()
             {
-                PointSize = 30,
+                PointSize = 100,
                 ParentOrigin = Tizen.NUI.ParentOrigin.TopCenter,
                 PivotPoint = Tizen.NUI.PivotPoint.TopCenter,
                 PositionUsesPivotPoint = true,
@@ -80,7 +80,7 @@ namespace BoxStation.box
             //reservedStuffLabel.SetBinding(TextLabel.TextProperty, "ReservedDate");
             reservedStuffLabel.Text = "노트북";
 
-            reservedDateLabel = new TextLabel()
+            /*reservedDateLabel = new TextLabel()
              {
                 PointSize = 30,
                 ParentOrigin = Tizen.NUI.ParentOrigin.TopRight,
@@ -89,9 +89,9 @@ namespace BoxStation.box
             };
             Add(reservedDateLabel);
             //reservedDateLabel.SetBinding(TextLabel.TextProperty, "ReservedDate");
-            reservedDateLabel.Text = "2021.08.25 PM 7:11";
+            reservedDateLabel.Text = "2021.08.25 PM 7:11";*/
             
-            presentCostLabel = new TextLabel()
+            /*presentCostLabel = new TextLabel()
             {
                 PointSize = 30,
                 ParentOrigin = Tizen.NUI.ParentOrigin.BottomRight,
@@ -100,14 +100,14 @@ namespace BoxStation.box
             };
             Add(presentCostLabel);
             //presentCostLabel.SetBinding(TextLabel.TextProperty, "PresentCost");
-            presentCostLabel.Text = "29,480";
+            presentCostLabel.Text = "29,480";*/
         }
 
         private void Btn_Clicked(object sender, ClickedEventArgs e)
         {
-            ClickBox clickbox = new ClickBox();
-            clickbox.BindingContext = this.BindingContext;
-            clickbox.ShowClickBoxPage();
+            //ClickBox clickbox = new ClickBox();
+            //clickbox.BindingContext = this.BindingContext;
+            //clickbox.ShowClickBoxPage(parameters);
         }
     }
 }

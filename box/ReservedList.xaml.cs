@@ -12,7 +12,7 @@ namespace BoxStation
         {
             InitializeComponent();
             List<Data.Boxes> dataSource = new List<Data.Boxes>();
-            foreach (var item in Resources.Boxes)
+            foreach (var item in Data.Resources.Boxes)
             {
                 dataSource.Add(new Data.Boxes(item.bst, item.bxn, item.isO, item.isP,item.stf,item.pw,item.date));
             }

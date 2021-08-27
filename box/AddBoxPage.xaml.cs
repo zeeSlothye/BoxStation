@@ -12,13 +12,14 @@ namespace BoxStation.box
 {
     public partial class AddBoxPage : ContentPage
     {
+        
         public AddBoxPage()
         {
             InitializeComponent();
             
             //station 정보들 받아옴. 
             Dictionary<string, Data.Stations> stationDataSource = new Dictionary<string, Data.Stations>();
-            foreach (var item in Resources.Stations)
+            foreach (var item in Data.Resources.Stations)
             {
                 //("충남대학교 정류장","0000","10","5"),
                 stationDataSource.Add(item.uuid, new Data.Stations(item.bst, item.uuid, item.umb, item.msk));
@@ -35,7 +36,7 @@ namespace BoxStation.box
 
             //Boxes에서 station.BusStation과 동일한 정보를 가진것만 뽑아서 dict에 추가. 
             List<Data.Boxes> boxesDataSource = new List<Data.Boxes>();
-            foreach (var item in Resources.Boxes)
+            foreach (var item in Data.Resources.Boxes)
             {
                 if (item.bst == station.BusStation){
                     //("충남대학교 정류장","1","isOpen_true.PNG","false","과자","1234","2021.01.19-AM.5:30")
@@ -59,11 +60,12 @@ namespace BoxStation.box
             boxInfo.Add(boxContainerView);
 
             //박스번호를 통해 박스 구분하도록 dict만듦. 
-            Data.BoxDataSource.Source(boxesDataSource);
-            
-            
+            Data.BoxDataSource box = new Data.BoxDataSource();
+            box.BoxDict(boxesDataSource);
         }
         
+
+
 
 
 

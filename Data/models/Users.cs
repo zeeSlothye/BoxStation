@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BoxStation.Data
 {
-    class Users: INotifyPropertyChanged
+    public class Users: INotifyPropertyChanged
     {
         //유저 연락처/ 가입시 비밀번호/ 연결된 비콘
         public event PropertyChangedEventHandler PropertyChanged;
@@ -16,11 +16,12 @@ namespace BoxStation.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public Users(string userPh, string userPw, string condBc)
+        public Users(string userPh, string userPw, string condBc, string autoPayment)
         {
             UserPhone = userPh;
             UserPW = userPw;
             ConnectedBeacon = condBc;
+            AutoPayment = autoPayment;
 
         }
 
@@ -66,6 +67,23 @@ namespace BoxStation.Data
             {
                 connectedBeacon = value;
                 OnPropertyChanged("ConnectedBeacon");
+            }
+        }
+        
+        private string autoPayment;
+        internal string userPh;
+
+        public string AutoPayment
+        {
+            get
+            {
+                return autoPayment;
+                ;
+            }
+            set
+            {
+                autoPayment = value;
+                OnPropertyChanged("AutoPayment");
             }
         }
     

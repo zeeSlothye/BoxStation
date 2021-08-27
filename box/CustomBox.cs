@@ -14,6 +14,7 @@ namespace BoxStation.box
     {
         private Button btn;
         private TextLabel label;
+        private string boxNumb;
         public CustomBox()
         {
             float sizeW = Window.Instance.WindowSize.Width * 0.3f;
@@ -47,16 +48,18 @@ namespace BoxStation.box
 
             label.SetBinding(TextLabel.TextProperty, "BoxNumber");
 
-        }
+            boxNumb = label.Text;
 
+        }
         private void Btn_Clicked(object sender, ClickedEventArgs e)
         {
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
             ClickBox clickbox = new ClickBox();
-            clickbox.ShowClickBoxPage();
+            parameters.Add("lockerIdx", boxNumb);
+            clickbox.ShowClickBoxPage(parameters);
             //AddBoxPage의 init에 의해 Data.BoxDataSource.Source에 해당 정류장에 있는 box들 정보가 저장됨.
             //Data.BoxDataSource.Source에서 사용자가 클릭한 박스를 불러옴. 
             //해당 정보를 Reserve, Reserved, ReservedList, ReservedListPopup에 전달함. 
-            //Data.BoxDataSource.Source[];
         }
     }
 }

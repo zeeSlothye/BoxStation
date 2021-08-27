@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace BoxStation.Data
 {
-    static class BoxDataSource
+    class BoxDataSource
     {
+        //AddBoxPage의 init에서 BoxDict를 호출하여 boxDataSource를 저장함. 
+        public static Dictionary<string, Boxes> boxDataSource = new Dictionary<string, Boxes>();
 
-       static public Dictionary<string, Boxes> Source(List<Boxes> boxesDataSource)
+        public void BoxDict(List<Boxes> boxesDataSource)
         {
-            Dictionary<string, Boxes> boxDataSource = new Dictionary<string, Boxes>();
             foreach (var item in boxesDataSource)
             {
                 boxDataSource.Add(item.BoxNumber, item);
             }
-            return boxDataSource;
         }
     }
     
