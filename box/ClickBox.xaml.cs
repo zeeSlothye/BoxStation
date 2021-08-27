@@ -7,6 +7,7 @@ namespace BoxStation.box
 {
     public partial class ClickBox : ContentPage
     {
+        //user가 입력한 비밀번호, 보관한 물건 정보를 입력받아 저장. 
         public ClickBox()
         {
             InitializeComponent();
@@ -24,7 +25,10 @@ namespace BoxStation.box
 
         private void startUse_Clicked(object sender, ClickedEventArgs e)
         {
-            Reserve.Instance.ShowPopup();
+            //Reserve.Instance.ShowPopup();
+            Reserve reserve = new Reserve();
+            reserve.ShowPopup();
+
         }
 
         private bool enterPW_TouchEvent(object source, TouchEventArgs e)

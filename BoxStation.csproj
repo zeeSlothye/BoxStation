@@ -16,12 +16,13 @@
     <None Remove="box\AddBoxPage.xaml" />
     <None Remove="box\Box.xaml" />
     <None Remove="box\ClickBox.xaml" />
-    <None Remove="box\RemoveBoxPage.xaml" />
     <None Remove="box\Reserve.xaml" />
     <None Remove="box\Reserved.xaml" />
+    <None Remove="box\ReservedListPopup.xaml" />
     <None Remove="bus\Bus.xaml" />
     <None Remove="mypage\MyPage.xaml" />
     <None Remove="NaviPage.xaml" />
+    <None Remove="ReservedList.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,13 +35,13 @@
     <EmbeddedResource Include="box\ClickBox.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="box\RemoveBoxPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="box\Reserve.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="box\Reserved.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="box\ReservedListPopup.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="bus\Bus.xaml">
@@ -52,6 +53,9 @@
     <EmbeddedResource Include="NaviPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="box\ReservedList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Include="Scene1Page.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
@@ -61,7 +65,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Tizen.NET" Version="9.0.0.16500" />
     <PackageReference Include="Tizen.NET.Internals" Version="9.0.0.16500" />
-    <PackageReference Include="Tizen.NUI.XamlBuild" Version="1.0.28" />
+    <PackageReference Include="Tizen.NUI.XamlBuild" Version="1.0.31" />
   </ItemGroup>
 
   <PropertyGroup>

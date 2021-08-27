@@ -18,7 +18,7 @@ namespace BoxStation.box
 
         private void Button_Clicked_Remove(object sender, ClickedEventArgs e)
         {
-            Navigator.Push(new RemoveBoxPage());
+            Navigator.Push(new ReservedList());
         }
     }
 }

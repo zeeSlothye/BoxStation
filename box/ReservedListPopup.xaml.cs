@@ -4,9 +4,9 @@ using Tizen.NUI.Components;
 
 namespace BoxStation.box
 {
-    public partial class RemoveBoxPage : ContentPage
+    public partial class ReservedListPopup : DialogPage
     {
-        public RemoveBoxPage()
+        public ReservedListPopup()
         {
             InitializeComponent();
         }

@@ -11,9 +11,19 @@
     </ContentPage.AppBar>
 
     <ContentPage.Content>
-        <View BackgroundColor="Green"
+        <View 
               WidthSpecification="{Static LayoutParamPolicies.MatchParent}" 
               HeightSpecification="{Static LayoutParamPolicies.MatchParent}">
+            <View.Layout>
+                <LinearLayout LinearAlignment="Center"
+                              LinearOrientation="Vertical"/>
+            </View.Layout>
+            <TextLabel Text="Phone Number: "
+                           PixelSize="100"/>
+            <TextLabel Text="Password:  "
+                           PixelSize="100"/>
         </View>
+        
+
     </ContentPage.Content>
 </ContentPage>
